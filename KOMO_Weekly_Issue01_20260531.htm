@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOMO Marketing Weekly — Issue 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #FDF8EE;
+    color: #64715D;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: #64715D;
+    padding: 30px 40px 24px;
+    text-align: center;
+  }
+  .brand-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #D5DCC8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .report-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FDF8EE;
+    margin-bottom: 5px;
+  }
+  .report-meta {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* MAIN */
+  .main-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 56px;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 44px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #D5DCC8;
+  }
+  .section-divider:first-child { margin-top: 0; }
+  .sec-num {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #B2B9AE;
+    text-transform: uppercase;
+  }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #64715D;
+  }
+  .sec-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border: 0.5px solid #D5DCC8;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-body { padding: 18px 20px 20px; }
+
+  /* EYEBROW */
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .tag {
+    background: #D5DCC8;
+    color: #64715D;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-src {
+    background: #64715D;
+    color: #FDF8EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+    margin-left: auto;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  /* INSIGHT */
+  .insight {
+    background: #D5DCC8;
+    border-left: 3px solid #64715D;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .box-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: #64715D;
+  }
+
+  /* KOMO VIEW */
+  .komo {
+    background: #64715D;
+    padding: 12px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .komo .box-label { color: #D5DCC8; }
+  .komo p { color: #FDF8EE; }
+  .komo .ai-note {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    color: #B2B9AE;
+    margin-left: 6px;
+    font-weight: 300;
+  }
+
+  /* SOURCE */
+  .source {
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+  }
+  .source a { color: #64715D; text-decoration: underline; }
+
+  /* IMAGES */
+  .img-main {
+    width: 100%; height: 210px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-2col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; margin-top: 2px;
+  }
+  .img-sub {
+    width: 100%; height: 150px;
+    object-fit: cover; display: block; background: #D5DCC8;
+  }
+  .img-single {
+    width: 100%; height: 180px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-fallback {
+    background: #D5DCC8; color: #64715D;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    gap: 6px;
+  }
+  .img-fallback a { color: #64715D; font-size: 11px; text-decoration: underline; }
+  .img-caption {
+    font-size: 11px; color: #B2B9AE;
+    padding: 5px 0 0; font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+  }
+  .img-caption a { color: #64715D; text-decoration: none; }
+
+  /* CONCEPT */
+  .concept {
+    background: #64715D;
+    padding: 26px 26px 22px;
+  }
+  .concept-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #D5DCC8; margin-bottom: 8px;
+  }
+  .concept-title {
+    font-size: 18px; font-weight: 500;
+    color: #FDF8EE; margin-bottom: 12px; line-height: 1.5;
+  }
+  .concept-body {
+    font-size: 13px; color: #FDF8EE;
+    opacity: 0.9; line-height: 1.85; margin-bottom: 14px;
+  }
+  .concept-komo {
+    border-top: 1px solid rgba(213,220,200,0.3);
+    padding-top: 12px;
+    font-size: 12px; color: #D5DCC8; line-height: 1.8;
+  }
+  .concept-komo strong { color: #FDF8EE; }
+
+  /* FOOTER */
+  .site-footer { background: #64715D; padding: 28px 40px; }
+  .footer-inner { max-width: 820px; margin: 0 auto; }
+  .footer-label {
+    font-family: 'Lato', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #D5DCC8; margin-bottom: 10px;
+  }
+  .footer-sources { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 14px; }
+  .footer-sources a {
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    color: #FDF8EE; text-decoration: none; opacity: 0.75;
+  }
+  .footer-note {
+    font-family: 'Lato', sans-serif; font-size: 11px;
+    color: #B2B9AE; margin-bottom: 12px;
+  }
+  .footer-copy {
+    font-family: 'Lato', sans-serif; font-size: 10px; color: #B2B9AE;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="brand-name">KOMO · Scalp &amp; Hair Wellness</div>
+  <div class="report-title">品牌营销周报 · Issue 01</div>
+  <div class="report-meta">2026 年 5 月 31 日 &nbsp;·&nbsp; For Internal Use Only</div>
+</header>
+
+<main class="main-content">
+
+  <!-- ── 01 本周品牌 ── -->
+  <div class="section-divider">
+    <span class="sec-num">01</span>
+    <span class="sec-title">本周品牌</span>
+    <span class="sec-sub">Brand Spotlight</span>
+  </div>
+
+  <div class="card">
+    <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=www.brandstar.com.cn/share-cover/uploads/article_covers/DWCOVER.png&w=820&output=jpg"
+      alt="朵薇品牌周年发布会 — 品牌星球"
+      class="img-main"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:210px\'><span>朵薇 · 品牌图片</span><a href=\'https://www.brandstar.com.cn/in-depth/8119\' target=\'_blank\'>查看原文 →</a></div>'" />
+    <div class="img-2col">
+      <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=media.brandstar.com.cn/uploads/images/797346142e313b1b5c7397ef81ceadb8.jpg&w=410&output=jpg"
+        alt="朵薇透明工厂生产线"
+        class="img-sub"
+        onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:150px\'><span>透明工厂</span></div>'" />
+      <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=media.brandstar.com.cn/uploads/images/43aceb7b90801a4af6ba4243a83f424f.jpg&w=410&output=jpg"
+        alt="朵薇周年发布会现场"
+        class="img-sub"
+        onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:150px\'><span>发布会现场</span></div>'" />
+    </div>
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.brandstar.com.cn/in-depth/8119" target="_blank">品牌星球 Brandstar</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">品牌星球</span>
+        <span class="tag">中国市场</span>
+        <span class="tag">透明品牌</span>
+        <span class="tag">个护赛道</span>
+        <span class="tag-date">May 20, 2026</span>
+      </div>
+      <div class="card-title">朵薇：一年7亿GMV，用「透明工厂」把信任做成护城河</div>
+      <p class="card-desc">
+        女性经期护理品牌朵薇成立一年，在极度内卷的个护红海中交出全渠道7亿GMV、98%好评率、58%复购率的成绩单。品牌在周年纪念日特意将发布会设在浙江东阳的透明工厂，开通24小时产线云直播、建立扫码产品溯源系统，并开放常态化线下探厂。面对"流量快品牌"的质疑，朵薇选择用可验证的生产透明度回应：把后端制造暴露在公众视野下，让信任有处可查。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        在高信任门槛的个护赛道，"透明"本身就是差异化——当品牌敢于把生产过程变成公开橱窗，质疑自然转化为背书。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>头皮护理同属高信任品类，KOMO 的科学主张同样需要"可验证"的支撑。可考虑开放头皮检测数据的脱敏展示、或邀请客户参观服务流程，让"科学驱动"不只是口号，而是客户亲眼所见。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.brandstar.com.cn/in-depth/8119" target="_blank">品牌星球 — 一年卖7亿，诞生即爆红的朵薇如何「把耳朵贴近用户」？</a></div>
+    </div>
+  </div>
+
+  <!-- ── 02 零售与空间设计 ── -->
+  <div class="section-divider">
+    <span class="sec-num">02</span>
+    <span class="sec-title">零售与空间设计</span>
+    <span class="sec-sub">Retail &amp; Space Design</span>
+  </div>
+
+  <div class="card">
+    <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=cosmeticsbusiness.com/article-image-alias/dior-unveils-beauty-suite-at-cannes-2.jpg&w=820&output=jpg"
+      alt="Dior 戛纳美容套房 — Cosmetics Business"
+      class="img-main"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:210px\'><span>Dior 戛纳美容套房</span><a href=\'https://cosmeticsbusiness.com/dior-unveils-beauty-suite-at-cannes-film-festival\' target=\'_blank\'>查看原文 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/dior-unveils-beauty-suite-at-cannes-film-festival" target="_blank">Cosmetics Business</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">空间设计</span>
+        <span class="tag">奢华体验</span>
+        <span class="tag-date">May 12, 2026</span>
+      </div>
+      <div class="card-title">Dior 戛纳电影节 350㎡ 美容套房：空间即内容，服务即传播</div>
+      <p class="card-desc">
+        Dior 在法国戛纳 Hotel Barrière Le Majestic 以蔚蓝海岸度假风开设专属美容套房，提供护肤、彩妆、发型、美体及男士美容一站式服务。350平方米空间引入品牌高定图案装置，并与 Dyson Beauty 合作打造发型区。每位名流到访既是服务对象，也是可传播的内容素材。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        高端美妆品牌的体验空间不再只是服务场所——当设计、叙事与服务融为一体，空间本身成为品牌世界观的实体化表达。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 的门店每个触点都值得像内容一样被设计——从检测区的设备陈列到护理后的离店感受，每一个细节都是让客户主动分享的契机。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/dior-unveils-beauty-suite-at-cannes-film-festival" target="_blank">Cosmetics Business — Dior unveils beauty suite at Cannes Film Festival</a></div>
+    </div>
+  </div>
+
+  <!-- ── 03 本周营销案例 ── -->
+  <div class="section-divider">
+    <span class="sec-num">03</span>
+    <span class="sec-title">本周营销案例</span>
+    <span class="sec-sub">Marketing Cases</span>
+  </div>
+
+  <div class="card">
+    <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=cosmeticsbusiness.com/article-image-alias/the-ordinary-spotlights-new-york-city.jpg&w=820&output=jpg"
+      alt="The Ordinary 免费巴士纽约 — Cosmetics Business"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>The Ordinary Bus · NYC</span><a href=\'https://cosmeticsbusiness.com/the-ordinary-spotlights-new-york-transit-problem-with-free-bus-service\' target=\'_blank\'>查看原文 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/the-ordinary-spotlights-new-york-transit-problem-with-free-bus-service" target="_blank">Cosmetics Business</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">公益营销</span>
+        <span class="tag">品牌行动</span>
+        <span class="tag-date">May 22, 2026</span>
+      </div>
+      <div class="card-title">The Ordinary 纽约免费巴士：把品牌主张变成真实行动</div>
+      <p class="card-desc">
+        The Ordinary 在纽约布鲁克林运营两周免费穿梭巴士，将50分钟以上的地铁通勤缩短一半，前100名乘客每日获赠全尺寸产品。这是继去年廉价鸡蛋发售后，品牌再次以解决真实城市痛点取代广告投放，将"可及性"主张落地为具体行动。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        当品牌主张变成真实行动，所获得的公关价值和用户信任远超同等预算的付费曝光。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 能为目标客群解决什么真实问题？免费头皮检测日、产后脱发专属咨询——"真实帮助"是建立品牌信任的最短路径。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/the-ordinary-spotlights-new-york-transit-problem-with-free-bus-service" target="_blank">Cosmetics Business — The Ordinary spotlights New York City transit problem</a></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=beautymatter.com/uploads/2026/04/seo/JZckRFCyZsIwhvGX4peqENgep9qlM456faKSPuN6.jpg&w=820&output=jpg"
+      alt="RushTok 美妆品牌联谊会营销 — BeautyMatter"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>RushTok · BeautyMatter</span><a href=\'https://beautymatter.com/articles/rush-week-beauty-sororities\' target=\'_blank\'>查看原文 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://beautymatter.com/articles/rush-week-beauty-sororities" target="_blank">BeautyMatter</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">BeautyMatter</span>
+        <span class="tag">社群营销</span>
+        <span class="tag">Gen Z</span>
+        <span class="tag-date">May 17, 2026</span>
+      </div>
+      <div class="card-title">RushTok：美妆品牌把大学联谊会变成高信任渗透网络</div>
+      <p class="card-desc">
+        Bubble Skincare 在全美建立1.8万名大学生大使网络，针对"招新周（Rush Week）"定制体验活动，在 TikTok 触发逾300万次有机曝光。联谊会的价值在于其"高密度生活场景 + 高信任口碑 + 重复性仪式"的三重特性：来自"同屋姐妹"的产品推荐，说服力远超达人付费内容。品牌策略也从一次性快闪转向持续嵌入日常仪式。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        平台影响力让位于社群信任——Gen Z 更相信来自真实生活场景的口碑推荐，品牌应从"时刻触达"升级为"生态嵌入"。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 的目标客群同样有高信任社群——瑜伽工作室、女性创业圈、产后妈妈群体。可参考 Bubble 模型，优先在这类高密度场景中建立口碑，而非依赖单点 KOL 投放。</p>
+      </div>
+      <div class="source">来源：<a href="https://beautymatter.com/articles/rush-week-beauty-sororities" target="_blank">BeautyMatter — Rush Week Is the New Runway</a></div>
+    </div>
+  </div>
+
+  <!-- ── 04 本周概念 ── -->
+  <div class="section-divider">
+    <span class="sec-num">04</span>
+    <span class="sec-title">本周概念</span>
+    <span class="sec-sub">Concept of the Week</span>
+  </div>
+
+  <div class="concept">
+    <div class="concept-label">Concept · 本周概念</div>
+    <div class="concept-title">从打断到融入<br><span style="font-size:13px;opacity:0.65;font-weight:300">From Interruption to Integration</span></div>
+    <div class="concept-body">
+      本周三个案例指向同一个转变：最有效的营销，不是在消费者注意力中"插入"品牌信息，而是让品牌真正嵌入消费者的生活场景与信任网络。朵薇把生产线变成24小时公开橱窗；The Ordinary 把免费巴士嵌入城市通勤；Bubble 把产品嵌入联谊会的日常仪式。"融入"意味着品牌不再是外来访客，而是成为体验本身的一部分。
+    </div>
+    <div class="concept-komo">
+      <strong>KOMO 应用 <span style="font-size:10px;opacity:0.6;font-weight:300">（AI 生成）</span>：</strong>重新审视服务流程——每个环节是否都在加深客户对头皮健康的理解？将服务设计为"教育型仪式"，让客户每次离店都带走一个新认知，是建立长期黏性最自然的路径。
+    </div>
+  </div>
+
+  <!-- ── 05 头皮护理品类动态 ── -->
+  <div class="section-divider">
+    <span class="sec-num">05</span>
+    <span class="sec-title">头皮护理品类动态</span>
+    <span class="sec-sub">Scalp &amp; Haircare Category</span>
+  </div>
+
+  <div class="card">
+    <img referrerpolicy="no-referrer" src="https://wsrv.nl/?url=beautymatter.com/uploads/2026/04/two_image_row/I5l76dHGiTFeQFNKoviENJStUg5gRuMct6GbzSWL.jpg&w=820&output=jpg"
+      alt="发丝长寿成分 Cosmoprof Bologna 2026 — BeautyMatter"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Cosmoprof Bologna 2026 · BeautyMatter</span><a href=\'https://beautymatter.com/articles/microspicules-polyphenols-and-peptides-how-longevity-is-entering-haircare\' target=\'_blank\'>查看原文 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">Cosmoprof Worldwide Bologna 2026 · 图片来源：<a href="https://beautymatter.com/articles/microspicules-polyphenols-and-peptides-how-longevity-is-entering-haircare" target="_blank">BeautyMatter</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">BeautyMatter</span>
+        <span class="tag">成分趋势</span>
+        <span class="tag">发丝长寿</span>
+        <span class="tag-date">Apr 23, 2026</span>
+      </div>
+      <div class="card-title">三大成分方向：多肽、海洋骨针（Microspicules）、多酚——发丝长寿主义在 Cosmoprof 崛起</div>
+      <p class="card-desc">
+        博洛尼亚 Cosmoprof 展会上，"发丝长寿主义"成为最受关注的新兴话题。三大成分方向浮现：正电荷多肽可黏附发丝精准递送活性物至毛囊；海洋骨针（Microspicules）以天然微针方式在头皮建立通道深度输送活性成分（目前亚洲先行）；多酚黏合技术从物理层面阻止脱落。专家共识：发丝长寿需内外协同、多机制并举，预计十年内与护肤长寿主义并驾齐驱。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        海洋骨针在亚洲市场处于早期普及阶段——这是 KOMO 在专业头皮护理领域建立差异化认知的潜在窗口期。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>建议内容团队策划"KOMO 成分科普"系列，借行业热点提前占位头皮护理成分的搜索心智，同时推动产品团队评估上述成分方向的配方可行性。</p>
+      </div>
+      <div class="source">来源：<a href="https://beautymatter.com/articles/microspicules-polyphenols-and-peptides-how-longevity-is-entering-haircare" target="_blank">BeautyMatter — Microspicules, Polyphenols, and Peptides: How Longevity is Entering Haircare</a></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label">本期来源 Sources</div>
+    <div class="footer-sources">
+      <a href="https://beautymatter.com" target="_blank">BeautyMatter</a>
+      <a href="https://cosmeticsbusiness.com" target="_blank">Cosmetics Business</a>
+      <a href="https://www.dezeen.com" target="_blank">Dezeen</a>
+      <a href="https://www.campaignlive.co.uk" target="_blank">Campaign</a>
+      <a href="https://voguebusiness.com" target="_blank">Vogue Business</a>
+      <a href="https://www.brandstar.com.cn" target="_blank">品牌星球 Brandstar</a>
+    </div>
+    <div class="footer-note">* Vogue Business 本期网络访问受限，未收录内容。KOMO 视角均为 AI 辅助生成，供参考。</div>
+    <div class="footer-copy">KOMO · Scalp &amp; Hair Wellness &nbsp;·&nbsp; Issue 01 &nbsp;·&nbsp; 2026.05.31 &nbsp;·&nbsp; 仅供内部使用</div>
+  </div>
+</footer>
+
+</body>
+</html>
