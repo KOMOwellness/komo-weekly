@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOMO Marketing Weekly — Issue 04</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #FDF8EE;
+    color: #64715D;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: #64715D;
+    padding: 30px 40px 24px;
+    text-align: center;
+  }
+  .brand-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #D5DCC8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .report-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FDF8EE;
+    margin-bottom: 5px;
+  }
+  .report-meta {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* MAIN */
+  .main-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 56px;
+  }
+
+  /* INTRO */
+  .intro {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #64715D;
+    background: #fff;
+    border: 0.5px solid #D5DCC8;
+    border-left: 3px solid #64715D;
+    padding: 16px 18px;
+    margin-bottom: 8px;
+  }
+  .intro strong { color: #64715D; font-weight: 500; }
+
+  /* DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 44px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #D5DCC8;
+  }
+  .sec-num {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #B2B9AE;
+    text-transform: uppercase;
+  }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #64715D;
+  }
+  .sec-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border: 0.5px solid #D5DCC8;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-body { padding: 18px 20px 20px; }
+
+  /* EYEBROW */
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .tag {
+    background: #D5DCC8;
+    color: #64715D;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-src {
+    background: #64715D;
+    color: #FDF8EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-inbox {
+    background: #B2B9AE;
+    color: #FDF8EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+    margin-left: auto;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  /* INSIGHT */
+  .insight {
+    background: #D5DCC8;
+    border-left: 3px solid #64715D;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .box-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: #64715D;
+  }
+
+  /* KOMO VIEW */
+  .komo {
+    background: #64715D;
+    padding: 12px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .komo .box-label { color: #D5DCC8; }
+  .komo p { color: #FDF8EE; }
+  .komo .ai-note {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    color: #B2B9AE;
+    margin-left: 6px;
+    font-weight: 300;
+  }
+
+  /* SOURCE */
+  .source {
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+  }
+  .source a { color: #64715D; text-decoration: underline; }
+
+  /* IMAGES */
+  .img-main {
+    width: 100%; height: 210px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-single {
+    width: 100%; height: 180px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-fallback {
+    background: #D5DCC8; color: #64715D;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    gap: 6px;
+  }
+  .img-fallback a { color: #64715D; font-size: 11px; text-decoration: underline; }
+  .img-caption {
+    font-size: 11px; color: #B2B9AE;
+    padding: 5px 0 0; font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+  }
+  .img-caption a { color: #64715D; text-decoration: none; }
+
+  /* CONCEPT */
+  .concept {
+    background: #64715D;
+    padding: 26px 26px 22px;
+  }
+  .concept-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #D5DCC8; margin-bottom: 8px;
+  }
+  .concept-title {
+    font-size: 18px; font-weight: 500;
+    color: #FDF8EE; margin-bottom: 12px; line-height: 1.5;
+  }
+  .concept-body {
+    font-size: 13px; color: #FDF8EE;
+    opacity: 0.9; line-height: 1.85; margin-bottom: 14px;
+  }
+  .concept-komo {
+    border-top: 1px solid rgba(213,220,200,0.3);
+    padding-top: 12px;
+    font-size: 12px; color: #D5DCC8; line-height: 1.8;
+  }
+  .concept-komo strong { color: #FDF8EE; }
+
+  /* FOOTER */
+  .site-footer { background: #64715D; padding: 28px 40px; }
+  .footer-inner { max-width: 820px; margin: 0 auto; }
+  .footer-label {
+    font-family: 'Lato', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #D5DCC8; margin-bottom: 10px;
+  }
+  .footer-sources { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 14px; }
+  .footer-sources a {
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    color: #FDF8EE; text-decoration: none; opacity: 0.75;
+  }
+  .footer-note {
+    font-family: 'Lato', sans-serif; font-size: 11px;
+    color: #B2B9AE; margin-bottom: 12px;
+  }
+  .footer-copy {
+    font-family: 'Lato', sans-serif; font-size: 10px; color: #B2B9AE;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="brand-name">KOMO · Scalp &amp; Hair Wellness</div>
+  <div class="report-title">品牌营销周报 · Issue 04</div>
+  <div class="report-meta">2026 年 6 月 22 日 &nbsp;·&nbsp; For Internal Use Only</div>
+</header>
+
+<main class="main-content">
+
+  <p class="intro">
+    <strong>本期速览</strong>：本周行业被一股力量主导——<strong>AI 正在从「卖点」变成「基建」</strong>。L'Oréal 在 VivaTech 把整个品牌押注于 AI，并牵手 OpenAI；Jo Malone 用 AI「香氛衣橱」重做发现体验；Unilever 把 AI 数字孪生搬进工厂。但与此并行的，是一条同样强烈的逆流：BeautyMatter 说人们「想要小物件，而非 AI」，Clinique 为「敏感的流行病」单独立线，Cannes 与世界杯赛场上品牌比的仍是「谁更懂人」。当技术把「精准」做成标配，<strong>「被感受到的温度」正在成为新的溢价</strong>。对 KOMO 而言，头皮检测是「科技的精准」，而真正的护城河，是把冰冷的数据翻译成「被认真照顾」的感受。<br><span style="font-size:11px;color:#B2B9AE">※ 本周收集箱无新增素材；Issue 04 内容全部来自 6 月 22 日当周公开行业资讯。</span>
+  </p>
+
+  <!-- ── 01 本周品牌 ── -->
+  <div class="section-divider">
+    <span class="sec-num">01</span>
+    <span class="sec-title">本周品牌</span>
+    <span class="sec-sub">Brand Spotlight</span>
+  </div>
+
+  <!-- L'Oréal VivaTech -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/what-l-or%C3%A9al-s-2026-vivatech-showcase-indicates-4.jpg&w=820&output=jpg"
+      alt="L'Oréal at VivaTech 2026 — Beauty Odyssey"
+      class="img-main"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:210px\'><span>L&#39;Or&eacute;al × VivaTech 2026 · OpenAI Partnership</span><a href=\'https://cosmeticsbusiness.com/what-lor%C3%A9als-2026-vivatech-showcase-indicates-future-beauty\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/what-lor%C3%A9als-2026-vivatech-showcase-indicates-future-beauty" target="_blank">Cosmetics Business</a> · L'Oréal VivaTech 2026「Beauty Odyssey」第十年参展</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">AI 基建</span>
+        <span class="tag">巨头战略</span>
+        <span class="tag">科技赋能</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">L'Oréal 在 VivaTech 2026：把整个美妆未来押注在 AI 上，并牵手 OpenAI</div>
+      <p class="card-desc">
+        本周 L'Oréal 在巴黎 VivaTech 2026 科技展上密集发布了一系列技术动作，姿态鲜明——要做「美妆追随的那颗指路星」。其全球技术与开放创新副总裁 Guive Balooch 借此抛出对美妆未来的预测；同期，L'Oréal 宣布与 OpenAI 达成合作以强化其人工智能能力，这也是这家美妆集团连续第十年参展 VivaTech。Cosmetics Business 的解读指出：当行业最大的玩家把「AI」从某个单品的卖点，升级为贯穿研发、个性化、营销的底层基建时，AI 在美妆个护里的角色已经从「加分项」变成了「入场券」。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        当巨头把 AI 做成「基建」，AI 本身就不再是差异化——它会像「会用电」一样成为默认能力。下一轮竞争的胜负手，不在「有没有 AI」，而在「AI 之上你给了用户什么独有的、机器替代不了的东西」。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>大牌把 AI 全面基建化，对 KOMO 既是压力也是提醒：单靠「我们有 AI 检测」很快不再稀奇。KOMO 的差异化要往「AI 给不了的部分」走——线下真人的解读、共情与陪伴，以及把「一份头皮数据」翻译成「一个被认真对待的人」的服务温度。建议把技术叙事从「我们用了多先进的 AI」，切换到「我们用 AI 把你看得更清楚，再用人把你照顾得更好」。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/what-lor%C3%A9als-2026-vivatech-showcase-indicates-future-beauty" target="_blank">Cosmetics Business — What L'Oréal's 2026 VivaTech showcase indicates for the future of beauty</a> &nbsp;·&nbsp; <a href="https://cosmeticsbusiness.com/l-or%C3%A9al-bolsters-artificial-intelligence-capabilities-with-openai-partnership" target="_blank">L'Oréal bolsters AI capabilities with OpenAI partnership</a></div>
+    </div>
+  </div>
+
+  <!-- ZHA rebrand -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=static.dezeen.com/uploads/2026/06/zha-zaha-hadid-architects-rebrand-patrik-schumacher_dezeen_2364_col_0-852x479.jpg&w=820&output=jpg"
+      alt="Zaha Hadid Architects rebrands to ZHA"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Zaha Hadid Architects → ZHA · 品牌识别进化</span><a href=\'https://www.dezeen.com/2026/06/15/zha-zaha-hadid-architects-rebrand-patrik-schumacher/\' target=\'_blank\'>查看 Dezeen 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.dezeen.com/2026/06/15/zha-zaha-hadid-architects-rebrand-patrik-schumacher/" target="_blank">Dezeen</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Dezeen</span>
+        <span class="tag">品牌识别</span>
+        <span class="tag">命名策略</span>
+        <span class="tag">超越创始人</span>
+        <span class="tag-date">Jun 15, 2026</span>
+      </div>
+      <div class="card-title">Zaha Hadid Architects 更名「ZHA」：当品牌大于创始人时，名字该怎么走？</div>
+      <p class="card-desc">
+        建筑界本周一桩品牌事件值得营销人关注：在结束一场长达两年的法律纠纷后，Zaha Hadid Architects 正式更名为「ZHA Architects Limited」（简称 ZHA）。主持人 Patrik Schumacher 将此描述为「自然的品牌进化」——「这是在 Zaha 离开的十年后，走向一个更具集体性的身份是非常自然的下一步」。事务所如今横跨六大洲、有 100 个在建项目，更名背后既有与 Zaha Hadid 基金会就「使用创始人姓名」的授权之争（此前需支付年营收 6% 的授权费），也有一个更普遍的品牌命题：当一个以创始人命名的品牌走向规模化、走向「没有创始人之后的时代」，是继续依附于个人光环，还是建立一个能独立生长的「集体身份」？
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        以创始人命名是一把双刃剑：早期它是信任的捷径，后期它可能成为增长的天花板。把品牌资产从「一个人」逐步转移到「一套可被传承的体系与信念」，是所有创始人品牌迟早要做的功课。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 虽非个人命名品牌，但这个案例提醒：品牌的核心资产应当沉淀在「可被传承的体系」上，而非某位明星店长、某位专家个人。建议尽早把 KOMO 的专业能力「制度化、可视化」——把头皮检测的标准、解读逻辑、服务流程做成可复制的「KOMO 方法论」，让用户信任的是「KOMO 这套体系」，而不是某一个具体的人。这样品牌才能在扩店、换人时不掉信任。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.dezeen.com/2026/06/15/zha-zaha-hadid-architects-rebrand-patrik-schumacher/" target="_blank">Dezeen — Patrik Schumacher removes Zaha Hadid's name as studio rebrands to ZHA</a></div>
+    </div>
+  </div>
+
+  <!-- ── 02 头皮护理品类动态 ── -->
+  <div class="section-divider">
+    <span class="sec-num">02</span>
+    <span class="sec-title">头皮护理品类动态</span>
+    <span class="sec-sub">Scalp &amp; Haircare Category</span>
+  </div>
+
+  <!-- Clinique Daily Calm -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/clinique-aims-to-address-epidemic-of.jpg&w=820&output=jpg"
+      alt="Clinique Daily Calm range"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Clinique · Daily Calm 敏感肌专线</span><a href=\'https://cosmeticsbusiness.com/clinique-daily-calm-addresses-epidemic-of-sensitivity\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/clinique-daily-calm-addresses-epidemic-of-sensitivity" target="_blank">Cosmetics Business</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">敏感护理</span>
+        <span class="tag">屏障健康</span>
+        <span class="tag">细分品类</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">Clinique「Daily Calm」回应「敏感的流行病」——舒缓正在成为护理的新主线</div>
+      <p class="card-desc">
+        雅诗兰黛集团旗下 Clinique 本周推出全新「Daily Calm」系列，旨在应对它所称的「敏感的流行病（epidemic of sensitivity）」。这是该品牌首条专为敏感肌打造的产品线，横跨护肤与彩妆。其背后是一个正在变大的趋势：在「强功效、猛成分」喧嚣多年之后，越来越多消费者反而开始追求「温和、舒缓、修护屏障」；与之呼应的，是本周行业里同时升温的「肌肤屏障健康＝抗老新解法」「敏感肌专属配方」等讨论。护理的语言，正从「我能改变你多少」转向「我能让你多舒服、多安心」。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        「敏感」不再是一个小众痛点，而是一个被普遍化的时代情绪——人们在高压、过度刺激的生活里，对一切「温和、安心、被照顾」的东西都更敏感。能精准回应「敏感」的品牌，卖的其实是「确定的安全感」。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>「敏感」正是头皮护理的核心战场——换季敏感、产后敏感、染烫受损、油敏头皮，都是高频且情绪化的痛点。KOMO 的头皮检测恰好能把「我是不是敏感」这件模糊焦虑的事变成「可被看见的客观判断」，再给出温和、循序的方案。建议把「敏感头皮」作为一个明确的细分沟通入口，用「先检测、再安心」的逻辑承接这股全行业的「舒缓化」情绪。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/clinique-daily-calm-addresses-epidemic-of-sensitivity" target="_blank">Cosmetics Business — Clinique aims to address 'epidemic of sensitivity' with new Daily Calm range</a></div>
+    </div>
+  </div>
+
+  <!-- Jo Malone AI personalization -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/jo-malone-london-launches-personalised-fragrance.jpg&w=820&output=jpg"
+      alt="Jo Malone London Scent Scanner on Pinterest"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Jo Malone London · Scent Scanner × Pinterest</span><a href=\'https://cosmeticsbusiness.com/jo-malone-london-launches-personalised-fragrance-wardrobe-pinterest\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/jo-malone-london-launches-personalised-fragrance-wardrobe-pinterest" target="_blank">Cosmetics Business</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">AI 个性化</span>
+        <span class="tag">发现体验</span>
+        <span class="tag">人货匹配</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">Jo Malone London 把「AI 香氛衣橱」搬上 Pinterest：用画面而非文字帮你找到「你的味道」</div>
+      <p class="card-desc">
+        Jo Malone London 本周在 Pinterest 上线了名为「Scent Scanner」的个性化香氛体验——它建立在品牌此前的「AI Scent Advisor」之上，但不再依赖用户用文字描述偏好，而是借由视觉与审美（你喜欢的画面、氛围、调性）来反推适合你的香氛。这代表「AI 个性化」正在从「问卷式问答」走向「读懂你的审美」：品牌不再让用户费力描述需求，而是从用户自然流露的偏好里，自己「猜中」答案。AI 个性化的较量，正从「问得多准」转向「懂得多深」。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        最好的个性化，是让用户「不用努力表达」就被读懂。当工具能从模糊的、感性的线索里推断出精准的需求，「被懂得」的体验本身，就成了最强的情感粘性。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 的头皮检测天然就是「不用努力表达就被读懂」的极佳载体——用户说不清自己头皮的问题，但检测能直接「看见」。可借鉴 Jo Malone 的思路，把检测结果做成一份「头皮画像」式的个性化呈现：不只给数据，更给一个「我懂你的头皮」的解读与方案。让用户感到「KOMO 比我自己更懂我的头皮」，这种「被读懂」的体验，是复购与口碑的核心驱动。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/jo-malone-london-launches-personalised-fragrance-wardrobe-pinterest" target="_blank">Cosmetics Business — Jo Malone London launches personalised fragrance wardrobe on Pinterest</a></div>
+    </div>
+  </div>
+
+  <!-- ── 03 本周营销案例 ── -->
+  <div class="section-divider">
+    <span class="sec-num">03</span>
+    <span class="sec-title">本周营销案例</span>
+    <span class="sec-sub">Marketing Cases</span>
+  </div>
+
+  <!-- Cannes Lions 2026 -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cached.imagescaler.hbpl.co.uk/resize/scaleWidth/820/cached.offlinehbpl.hbpl.co.uk/news/OMC/jamesmurphyogilvy.jpg&w=820&output=jpg"
+      alt="Cannes Lions 2026 — Campaign"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Cannes Lions 2026 · 「Met Gala 化」之问</span><a href=\'https://www.campaignlive.co.uk/article/cannes-undergone-met-gala-makeover/1962114\' target=\'_blank\'>查看 Campaign 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.campaignlive.co.uk/article/cannes-undergone-met-gala-makeover/1962114" target="_blank">Campaign</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Campaign</span>
+        <span class="tag">戛纳创意节</span>
+        <span class="tag">行业风向</span>
+        <span class="tag">以人为本</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">2026 戛纳创意节：当广告界的「奥斯卡」越来越像「Met Gala」</div>
+      <p class="card-desc">
+        本周营销圈的焦点是正在举行的 Cannes Lions 2026。Campaign 抛出一个犀利观察——《戛纳是不是经历了一场「Met Gala 化」改造？》：这个曾经以创意作品论英雄的行业盛会，正越来越像一场星光熠熠、人脉与话题至上的社交秀。与此同时，Publicis 集团董事长兼 CEO Arthur Sadoun 在戛纳放话：「人，是我们的头号资产，也是我们为客户创造差异的关键。」在一个 AI 即将接管大量执行工作的当口，行业最高规格的舞台上，被反复强调的关键词反而是——「人」「关系」「创意的人味」。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        越是技术狂飙的年代，行业越会本能地回头强调「人」。这不是怀旧，而是一种清醒：当 AI 能做好「执行」，品牌的稀缺资产就回到了「人的判断、人的关系、人的创意品味」上。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>这正好印证了本期主线：技术负责精准，人负责被感受。KOMO 不必参与大型行业秀，但可把「人味」做成自己的招牌——让每一位检测师不只是「读数据的人」，而是「懂你头皮、记得你上次状态、会为你着想的人」。在一个人人都用 AI 的赛道里，「一个真正懂你、记得你的真人」会成为最难复制的体验差异。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.campaignlive.co.uk/article/cannes-undergone-met-gala-makeover/1962114" target="_blank">Campaign — Has Cannes undergone a Met Gala makeover?</a> &nbsp;·&nbsp; <a href="https://www.campaignlive.co.uk/article/arthur-sadoun-people-number-one-asset-key-differentiator-clients/1961990" target="_blank">Arthur Sadoun: People are our number one asset</a></div>
+    </div>
+  </div>
+
+  <!-- World Cup + U16 ban -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cached.imagescaler.hbpl.co.uk/resize/scaleWidth/820/cached.offlinehbpl.hbpl.co.uk/news/OMC/MixCollage-18-Jun-2026-10-41-AM-5505.jpg&w=820&output=jpg"
+      alt="Hawkstone World Cup TV ad — Campaign"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>世界杯借势 × 英国 U16 禁社媒</span><a href=\'https://www.campaignlive.co.uk/article/hawkstone-makes-tv-ad-debut-englands-first-world-cup-match/1962051\' target=\'_blank\'>查看 Campaign 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.campaignlive.co.uk/article/hawkstone-makes-tv-ad-debut-englands-first-world-cup-match/1962051" target="_blank">Campaign</a> · Hawkstone 世界杯电视广告首秀</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Campaign</span>
+        <span class="tag">世界杯营销</span>
+        <span class="tag">社媒政策</span>
+        <span class="tag">借势与变量</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">世界杯营销开闸 + 英国「U16 禁社媒」：一边是借势热潮，一边是规则巨变</div>
+      <p class="card-desc">
+        随着 2026 世界杯进入高潮，英国品牌的借势营销密集开闸：Sainsbury's 携 New Commercial Arts 推出「World Cup」主题广告，啤酒品牌 Hawkstone 也赶在英格兰首战前完成电视广告首秀。与此同时，一条可能重塑营销底层的政策正在逼近——英国首相 Keir Starmer 宣布，最快明年春天起禁止 16 岁以下使用社交媒体（涉及 Snapchat、TikTok、YouTube、Instagram、Facebook、X，但豁免 WhatsApp）。Campaign 援引行业领袖判断认为，该禁令对整体媒介投放的影响「相对温和」，但对依赖年轻受众、依赖社媒原生内容的品牌而言，这是一个必须提前布局的结构性变量。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        借势营销是「短期声量」，政策变化是「长期地形」。聪明的品牌会两手抓：用热点拿当下的注意力，同时为「平台规则、人群可达性」的长期变化预留 Plan B——不把全部触达押在某一个随时可能变天的渠道上。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 的核心客群（成年女性、妈妈、职场人群）不受 U16 禁令直接影响，但「平台规则随时变」的提醒同样成立：不要把品牌资产全押在某一个社媒平台上。建议把「检测数据 + 用户头皮档案」沉淀为 KOMO 自己拥有的私域资产（会员体系、检测报告、改善记录），这是任何平台政策都拿不走的「自有地形」。社媒负责拉新，私域负责留存与复购。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.campaignlive.co.uk/article/agency-leads-social-media-ban-will-muted-impact-media-spend/1962059" target="_blank">Campaign — Agency leads: social media ban will have 'muted' impact on media spend</a> &nbsp;·&nbsp; <a href="https://www.campaignlive.co.uk/article/hawkstone-makes-tv-ad-debut-englands-first-world-cup-match/1962051" target="_blank">Hawkstone makes TV ad debut before England's first World Cup match</a></div>
+    </div>
+  </div>
+
+  <!-- ── 04 趋势洞察 ── -->
+  <div class="section-divider">
+    <span class="sec-num">04</span>
+    <span class="sec-title">趋势洞察 · 反 AI 的实体与感受</span>
+    <span class="sec-sub">Objects, Feelings &amp; the Human Counter-Current</span>
+  </div>
+
+  <!-- Objects over AI / trinkets + wellness real estate -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=beautymatter.com/uploads/2026/05/seo/piM9Ig2PgCsSXIZqBkUfbdjuZioH8SEwqt2E52fe.jpg&w=820&output=jpg"
+      alt="Beauty trinkets — analog luxury, BeautyMatter"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:180px\'><span>Objects over AI · 对实体小物件的渴望</span><a href=\'https://beautymatter.com/articles/objects-over-ai-unpacking-our-desire-for-trinkets\' target=\'_blank\'>查看 BeautyMatter 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://beautymatter.com/articles/objects-over-ai-unpacking-our-desire-for-trinkets" target="_blank">BeautyMatter</a></p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">BeautyMatter</span>
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">实体溢价</span>
+        <span class="tag">情感物件</span>
+        <span class="tag">空间与感受</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">「想要小物件，而非 AI」：当技术越普及，可触摸、可感受的东西越值钱</div>
+      <p class="card-desc">
+        在 AI 主导本周议程的同时，几家媒体不约而同地记录了一条逆流。BeautyMatter 发表《Objects over AI：拆解我们对小物件（trinkets）的渴望》，指出在数字与 AI 泛滥的当下，人们反而越来越迷恋那些有质感、可把玩、可收藏的实体小物；Cosmetics Business 也在追问「Marc Jacobs Beauty 的小摆件式新包装」是高招还是失策——把彩妆做成「可收藏的玩物」正成为一股潮流。与此呼应，BeautyMatter 另一篇关于「健康地产的下一章是关于我们如何『感受』」的文章，把趋势落到了空间与身体的体感上。三条线索指向同一件事：当虚拟与智能成为常态，「实体的、可被身体感受到的体验」正在重新变得稀缺而昂贵。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        AI 越是接管「信息与效率」，人就越渴望「物质与感受」来锚定真实。未来的高端，不只是「更聪明的算法」，更是「更有温度的实体接触点」——一件值得把玩的物件、一个让你身体放松的空间、一次被真人照顾的体验。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>这与上一期 Crown Affair 的「modern heirloom」一脉相承，也直接回应本期主线。KOMO 的优势恰在于它「有实体、有空间、有真人」——这正是纯线上 AI 品牌给不了的。建议双管齐下：①把到店检测做成一段「可被身体感受」的仪式（环境、气味、触感、被照顾的节奏）；②给用户一件可带走、可把玩的实体物（如精致的检测档案手册、专属护理小工具），让 KOMO 的记忆「有形地」留在用户身边。在 AI 泛滥的赛道里，「可被感受的实体体验」就是 KOMO 的天然护城河。</p>
+      </div>
+      <div class="source">来源：<a href="https://beautymatter.com/articles/objects-over-ai-unpacking-our-desire-for-trinkets" target="_blank">BeautyMatter — Objects over AI: Unpacking Our Desire for Trinkets</a> &nbsp;·&nbsp; <a href="https://beautymatter.com/articles/wellness-real-estates-next-chapter-is-about-how-we-feel" target="_blank">Wellness Real Estate's Next Chapter Is About How We Feel</a> &nbsp;·&nbsp; <a href="https://cosmeticsbusiness.com/is-marc-jacobs-beautys-new-packaging-a-hit-or-miss" target="_blank">Cosmetics Business — Marc Jacobs Beauty trinket-style packaging</a></div>
+    </div>
+  </div>
+
+  <!-- ── 05 本周概念 ── -->
+  <div class="section-divider">
+    <span class="sec-num">05</span>
+    <span class="sec-title">本周概念</span>
+    <span class="sec-sub">Concept of the Week</span>
+  </div>
+
+  <div class="concept">
+    <div class="concept-label">Concept · 本周概念</div>
+    <div class="concept-title">被感受的真实<br><span style="font-size:13px;opacity:0.65;font-weight:300">Felt Authenticity — Care You Can Feel</span></div>
+    <div class="concept-body">
+      上一期我们谈「可被验证的真实」（看得见、可核对）；本周，主线自然向前延伸了一步——「被感受的真实」。本期所有案例其实在合奏同一首曲子：L'Oréal、Jo Malone、Unilever 把 AI 做成精准的「基建」，而 BeautyMatter 的「想要小物件而非 AI」、Clinique 的「敏感舒缓」、戛纳与世界杯反复强调的「人与情绪」，则共同指向技术的另一面——精准之外，人更渴望「被感受到的温度」。换句话说：<strong style="color:#FDF8EE">技术负责让你「被看清」，而品牌的溢价，在于让你「被感受到」。</strong>当 AI 把「准确」变成人人都有的标配，「让人真切感到被照顾」就成了最稀缺、最难被复制的东西。
+    </div>
+    <div class="concept-komo">
+      <strong>KOMO 应用 <span style="font-size:10px;opacity:0.6;font-weight:300">（AI 生成）</span>：</strong>KOMO 同时握着这条主线的两端——用 AI 头皮检测做到「精准看清」，又用线下空间与真人服务做到「温暖感受」。这是纯线上 AI 品牌和纯传统门店都难以同时拥有的组合。下一步的关键，是有意识地经营「感受」：检测时让用户感到被认真对待，解读时让用户感到被读懂，离店后让用户带走一件「记得 KOMO」的实体物。当别的品牌还在比「谁的 AI 更准」，KOMO 可以比「谁让用户更真切地感到——我被好好照顾了」。这，就是这个时代最贵的护城河。
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label">本期来源 Sources</div>
+    <div class="footer-sources">
+      <a href="https://beautymatter.com" target="_blank">BeautyMatter</a>
+      <a href="https://cosmeticsbusiness.com" target="_blank">Cosmetics Business</a>
+      <a href="https://www.dezeen.com" target="_blank">Dezeen</a>
+      <a href="https://www.campaignlive.co.uk" target="_blank">Campaign</a>
+      <a href="https://voguebusiness.com" target="_blank">Vogue Business</a>
+    </div>
+    <div class="footer-note">* 本期收集箱无新增素材，内容全部来自 6 月 22 日当周公开行业资讯。Cosmetics Business 与 BeautyMatter 部分文章为会员订阅专属，相关报道基于公开标题与摘要整理。Vogue Business 本期页面访问受限，未单独收录其内容。品牌星球（Brandstar）本期按要求未纳入。KOMO 视角、洞察与对比分析均为 AI 辅助生成，仅供内部参考，落地前请人工复核。</div>
+    <div class="footer-copy">KOMO · Scalp &amp; Hair Wellness &nbsp;·&nbsp; Issue 04 &nbsp;·&nbsp; 2026.06.22 &nbsp;·&nbsp; 仅供内部使用</div>
+  </div>
+</footer>
+
+</body>
+</html>
