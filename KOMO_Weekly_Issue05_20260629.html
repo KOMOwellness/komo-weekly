@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOMO Marketing Weekly — Issue 05</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #FDF8EE;
+    color: #64715D;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: #64715D;
+    padding: 30px 40px 24px;
+    text-align: center;
+  }
+  .brand-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #D5DCC8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .report-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FDF8EE;
+    margin-bottom: 5px;
+  }
+  .report-meta {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* MAIN */
+  .main-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 56px;
+  }
+
+  /* INTRO */
+  .intro {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #64715D;
+    background: #fff;
+    border: 0.5px solid #D5DCC8;
+    border-left: 3px solid #64715D;
+    padding: 16px 18px;
+    margin-bottom: 8px;
+  }
+  .intro strong { color: #64715D; font-weight: 500; }
+
+  /* DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 44px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #D5DCC8;
+  }
+  .sec-num {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #B2B9AE;
+    text-transform: uppercase;
+  }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #64715D;
+  }
+  .sec-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #B2B9AE;
+    letter-spacing: 1px;
+  }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border: 0.5px solid #D5DCC8;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-body { padding: 18px 20px 20px; }
+
+  /* EYEBROW */
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .tag {
+    background: #D5DCC8;
+    color: #64715D;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-src {
+    background: #64715D;
+    color: #FDF8EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-inbox {
+    background: #B2B9AE;
+    color: #FDF8EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+  }
+  .tag-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+    margin-left: auto;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  /* INSIGHT */
+  .insight {
+    background: #D5DCC8;
+    border-left: 3px solid #64715D;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .box-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: #64715D;
+  }
+
+  /* KOMO VIEW */
+  .komo {
+    background: #64715D;
+    padding: 12px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .komo .box-label { color: #D5DCC8; }
+  .komo p { color: #FDF8EE; }
+  .komo .ai-note {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    color: #B2B9AE;
+    margin-left: 6px;
+    font-weight: 300;
+  }
+
+  /* SOURCE */
+  .source {
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #B2B9AE;
+  }
+  .source a { color: #64715D; text-decoration: underline; }
+
+  /* IMAGES */
+  .img-main {
+    width: 100%; height: 210px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-single {
+    width: 100%; height: 180px;
+    object-fit: cover; display: block;
+    background: #D5DCC8;
+  }
+  .img-fallback {
+    background: #D5DCC8; color: #64715D;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    gap: 6px;
+  }
+  .img-fallback a { color: #64715D; font-size: 11px; text-decoration: underline; }
+  .img-caption {
+    font-size: 11px; color: #B2B9AE;
+    padding: 5px 0 0; font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+  }
+  .img-caption a { color: #64715D; text-decoration: none; }
+  .img-trio { display: flex; gap: 2px; background: #D5DCC8; }
+  .img-trio > div { flex: 1; }
+  .img-trio img { width: 100%; height: 170px; object-fit: cover; display: block; background: #D5DCC8; }
+  .img-trio .img-fallback { height: 170px; font-size: 11px; text-align: center; padding: 0 8px; }
+  .svg-cover { width: 100%; height: 180px; display: block; background: #64715D; }
+  .svg-cover .cv-src { font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; fill: #D5DCC8; }
+  .svg-cover .cv-ttl { font-family: 'Noto Sans SC', sans-serif; font-size: 21px; font-weight: 500; fill: #FDF8EE; }
+  .svg-cover .cv-sub { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 1px; fill: #B2B9AE; }
+
+  /* CONCEPT */
+  .concept {
+    background: #64715D;
+    padding: 26px 26px 22px;
+  }
+  .concept-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #D5DCC8; margin-bottom: 8px;
+  }
+  .concept-title {
+    font-size: 18px; font-weight: 500;
+    color: #FDF8EE; margin-bottom: 12px; line-height: 1.5;
+  }
+  .concept-body {
+    font-size: 13px; color: #FDF8EE;
+    opacity: 0.9; line-height: 1.85; margin-bottom: 14px;
+  }
+  .concept-komo {
+    border-top: 1px solid rgba(213,220,200,0.3);
+    padding-top: 12px;
+    font-size: 12px; color: #D5DCC8; line-height: 1.8;
+  }
+  .concept-komo strong { color: #FDF8EE; }
+
+  /* FOOTER */
+  .site-footer { background: #64715D; padding: 28px 40px; }
+  .footer-inner { max-width: 820px; margin: 0 auto; }
+  .footer-label {
+    font-family: 'Lato', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #D5DCC8; margin-bottom: 10px;
+  }
+  .footer-sources { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 14px; }
+  .footer-sources a {
+    font-family: 'Lato', sans-serif; font-size: 12px;
+    color: #FDF8EE; text-decoration: none; opacity: 0.75;
+  }
+  .footer-note {
+    font-family: 'Lato', sans-serif; font-size: 11px;
+    color: #B2B9AE; margin-bottom: 12px;
+  }
+  .footer-copy {
+    font-family: 'Lato', sans-serif; font-size: 10px; color: #B2B9AE;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="brand-name">KOMO · Scalp &amp; Hair Wellness</div>
+  <div class="report-title">品牌营销周报 · Issue 05</div>
+  <div class="report-meta">2026 年 6 月 29 日 &nbsp;·&nbsp; For Internal Use Only</div>
+</header>
+
+<main class="main-content">
+
+  <p class="intro">
+    <strong>本期速览</strong>：如果说上期的关键词是「AI 基建」，本周浮现的是一条更微妙的主线——<strong>当「专业」成为标配，品牌开始比拼「意义」</strong>。一边，Caroline Hirons 的 Skin Rocks 用「让护肤变得讲得通（Make Skincare Make Sense）」打出最大规模战役，Dermalogica 被重新讲述为「用科学取代潮流」的教育型标杆——都在把「专业 / 教育」做成护城河；另一边，Rituals 用「雷打不动捐 10% 利润」的使命、Snøhetta 把 Aalto 的 Paimio 疗养院改造成疗愈酒店——都在把「意义与感受」做成溢价。与此同时，AI 正悄悄变成新的「发现层」（VivaTech 的 GEO、AS Watson 的「AI 是 CEO 工程」），而戛纳的奖台则把奖颁给「有人味的创意」。一句话：<strong>专业是入场券，意义是溢价</strong>。对 KOMO 而言：头皮检测给了你「专业」的入场券，但赢面在于把数据翻译成「意义」——一次被认真对待、被读懂、值得反复回来的体验。<br><span style="font-size:11px;color:#B2B9AE">※ 本周收集箱无新增待收录素材（4 条均已标记 ✅ 收录于过往各期）；Issue 05 内容来自 6 月 29 日当周公开行业资讯。品牌星球（Brandstar）图片在本地环境无法稳定加载，本期已按要求不纳入该来源。</span>
+  </p>
+
+  <!-- ── 01 本周品牌 ── -->
+  <div class="section-divider">
+    <span class="sec-num">01</span>
+    <span class="sec-title">本周品牌</span>
+    <span class="sec-sub">Brand Spotlight</span>
+  </div>
+
+  <!-- Rituals Profit Pledge -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/rituals-profit-pledge-charitable-initiative-is.jpg&w=820&output=jpg"
+      alt="Rituals Profit Pledge"
+      class="img-main"
+      onerror="this.outerHTML='<div class=\'img-fallback\' style=\'height:210px\'><span>Rituals · Profit Pledge 公益承诺</span><a href=\'https://cosmeticsbusiness.com/rituals-profit-pledge-charitable-initiative-defying-beauty-turmoil\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/rituals-profit-pledge-charitable-initiative-defying-beauty-turmoil" target="_blank">Cosmetics Business</a> · Rituals「Profit Pledge」公益承诺</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">使命驱动</span>
+        <span class="tag">意义溢价</span>
+        <span class="tag">逆势增长</span>
+        <span class="tag-date">Jun 25, 2026</span>
+      </div>
+      <div class="card-title">Rituals「Profit Pledge」：每年雷打不动捐 10% 净利润，用「意义」穿越行业动荡</div>
+      <p class="card-desc">
+        荷兰生活方式美妆品牌 Rituals 本周被 Cosmetics Business 聚焦其低调却硬核的公益机制「Profit Pledge」——无论财季好坏、关税与地缘冲突如何冲击，每年都把 10% 净利润捐给改善「人与地球福祉」的组织，仅 2025 年就捐出 2600 万欧元，投向青少年心理健康、冲突地区儿童、海洋保护与哥伦比亚雨林修复。值得注意的是，这份「不打折的使命」并没有拖累生意：Rituals 2025 年营收超过 24 亿欧元，并在今年开出全球第 1500 家门店。品牌影响力总监、Profit Pledge 操盘者 Niki Schilling 直言，在企业公益普遍收缩的当下，品牌反而「应当对自己在社会影响中扮演的角色更有野心」。Rituals 之名本就源自「仪式」，它把「意义」从一句口号，做成了一个 25 年雷打不动兑现的承诺。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        Rituals 把「意义」做成了不可谈判的承诺，而非锦上添花的营销。当多数品牌在动荡中第一时间砍掉公益与品牌预算，它反其道而行——正是这种「再难也不动摇」的确定性，让品牌的使命变得可信，也成为穿越周期的护城河。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>Rituals 给 KOMO 的启发是：在「专业 / 功效」之上，品牌还需要一层「意义」。头皮检测解决的是功能问题，但真正让用户长期追随的，往往是品牌站在他们一边的「态度与在乎」。建议 KOMO 提炼一个清晰、可长期坚持的价值主张（例如「让每个人都能轻松看懂、照顾好自己的头皮健康」），并用一件具体、不打折的行动去承载它——哪怕很小，但要真实、可持续。意义不是口号，而是被反复兑现的承诺。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/rituals-profit-pledge-charitable-initiative-defying-beauty-turmoil" target="_blank">Cosmetics Business — Rituals Profit Pledge charitable initiative is defying beauty market turmoil</a></div>
+    </div>
+  </div>
+
+  <!-- Skin Rocks Make Skincare Make Sense -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/caroline-hirons-skin-rocks-unveils-biggest.jpg&w=820&output=jpg"
+      alt="Skin Rocks — Make Skincare Make Sense 战役"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>Skin Rocks · 「Make Skincare Make Sense」</span><a href=\'https://cosmeticsbusiness.com/caroline-hirons-skin-rocks-unveils-biggest-campaign-to-date\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/caroline-hirons-skin-rocks-unveils-biggest-campaign-to-date" target="_blank">Cosmetics Business</a> · Skin Rocks「Make Skincare Make Sense」整合战役（含伦敦塔桥点亮）</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">教育即营销</span>
+        <span class="tag">权威人设</span>
+        <span class="tag">高速增长</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">Caroline Hirons 的 Skin Rocks 打出史上最大战役：「让护肤变得讲得通」</div>
+      <p class="card-desc">
+        美妆权威 Caroline Hirons 创立的护肤品牌 Skin Rocks 本周公布迄今规模最大的整合战役「Make Skincare Make Sense（让护肤变得讲得通）」，涵盖户外广告（OOH，点亮伦敦塔桥）、街头海报（flyposting）与社媒接管，并配合全新视觉识别——背景是品牌连续三年录得 50% 同比增长。这是 Skin Rocks 从「单品故事」转向「品牌平台」的战略升级：把「把复杂的护肤讲清楚、帮用户做对选择」本身作为品牌主张，押注「可信赖的专业权威」这一稀缺资产。Hirons 直言，问题往往「不在产品本身，而在护肤被营销的方式」——人们被流行词与趋势淹没，却缺少真正的教育。在一个充斥着夸张功效与信息噪音的品类里，「帮你把事情想明白」正成为强有力的差异化。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        Skin Rocks 与 Rituals 看似一个讲「专业」、一个讲「使命」，底层逻辑却一致：都在用「确定性」对抗品类噪音。它们都不再单纯堆砌成分参数，而是回答用户更在意的问题——「这对我意味着什么 / 我该信谁」。专业把事情讲清楚，意义让人愿意长期相信。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>「Make Skincare Make Sense」几乎是为 KOMO 量身定制的句式。头皮护理对大多数人同样是一团模糊焦虑——油、痒、掉发、敏感，分不清原因。KOMO 完全可以用「让头皮护理变得讲得通」作为长期品牌主张：用检测把模糊变清晰，用解读帮用户做对选择。建议把「教育内容」体系化（头皮科普、检测报告解读、对症方案），让 KOMO 成为用户心里「头皮这件事，听他们的准没错」的权威，这是比单次成交更长效的资产。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/caroline-hirons-skin-rocks-unveils-biggest-campaign-to-date" target="_blank">Cosmetics Business — Caroline Hirons' Skin Rocks unveils biggest campaign to date to accelerate growth</a></div>
+    </div>
+  </div>
+
+  <!-- ── 02 头皮护理品类动态 ── -->
+  <div class="section-divider">
+    <span class="sec-num">02</span>
+    <span class="sec-title">头皮护理品类动态</span>
+    <span class="sec-sub">Scalp &amp; Haircare Category</span>
+  </div>
+
+  <!-- Tangle Teezer / Beauty Works scalp hygiene brush -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cosmeticsbusiness.com/the-brains-behind-tangle-teezer-and.jpg&w=820&output=jpg"
+      alt="Killabrush 抗菌发刷"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>Killabrush · 抗菌发刷（头皮卫生）</span><a href=\'https://cosmeticsbusiness.com/ex-tangle-teezer-beauty-works-launch-killabrush\' target=\'_blank\'>查看 Cosmetics Business 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://cosmeticsbusiness.com/ex-tangle-teezer-beauty-works-launch-killabrush" target="_blank">Cosmetics Business</a> · Tangle Teezer 与 Beauty Works 操盘手创立新品牌 Killabrush</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag">头皮清洁</span>
+        <span class="tag">工具创新</span>
+        <span class="tag">头皮健康</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">Tangle Teezer 与 Beauty Works 操盘手创立新品牌 Killabrush：一把「抗菌」发刷，正面迎击头皮卫生</div>
+      <p class="card-desc">
+        本周美发品类一个直接相关的动作：把 Beauty Works 做到 5500 万英镑的 Penelope Cheshire，与帮 Tangle Teezer 成长为全球品牌的 Matt Lumb 联手，创立新品牌 Killabrush，主打一把「主动抑制高达 99.9% 细菌」的抗菌发刷，瞄准「被长期忽视的头皮/发刷卫生」这一空白（首发 Original Paddle Brush 与 Vented Styling Brush 两款）。两位创始人指出：昂贵的精华、头皮磨砂、造型产品早已被反复投资，唯独「每天都在用的发刷」被遗忘。这延续了一个正在升温的趋势——护发重心持续从「发丝外观」上移到「头皮根源」，「头皮即护肤（scalp = skin）」的认知被工具、配方与服务反复强化；同期 Cosmetics Business 也在关注面向纹理发质的「高清护理」（预计 2030 年近 40% 人口为卷发/纹理发）。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        「头皮健康」已经从专业话题走向大众消费品的主战场——连一把梳子都在抢占「头皮卫生」的心智。这说明市场教育正在被同行共同推进，对以头皮为核心的品牌是顺风，但也意味着「头皮」二字本身不再稀奇，差异化要落到「比别人更懂、更准、更对症」。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>当工具品牌都在用「头皮卫生」做卖点，KOMO 的优势在于站在更上游——「先看见，再解决」。一把刷子只能笼统地宣称「清洁头皮」，而 KOMO 能告诉用户「你的头皮到底是什么状态、为什么、该用什么」。建议借这股「头皮即护肤」的行业东风，强化 KOMO「头皮诊断中枢」的定位：别人卖产品，KOMO 卖「判断力」。可考虑把检测结论与具体工具/产品推荐打通，让 KOMO 成为用户选购头皮护理产品前的「第一道专业入口」。</p>
+      </div>
+      <div class="source">来源：<a href="https://cosmeticsbusiness.com/ex-tangle-teezer-beauty-works-launch-killabrush" target="_blank">Cosmetics Business — The brains behind Tangle Teezer and Beauty Works launch a brush that tackles hair hygiene head-on（Killabrush，2026-06-23）</a></div>
+    </div>
+  </div>
+
+  <!-- Dermalogica science over trends -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=beautymatter.com/uploads/2026/06/seo/RwSetx4bkd7JVqzfg9JTp63li4sot3pHFjSGHmE5.jpg&w=820&output=jpg"
+      alt="Dermalogica · Jane Wurwand"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>Dermalogica · Jane Wurwand「以科学取代潮流」</span><a href=\'https://beautymatter.com/articles/dermalogica-jane-wurwand\' target=\'_blank\'>查看 BeautyMatter 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://beautymatter.com/articles/dermalogica-jane-wurwand" target="_blank">BeautyMatter</a> · Dermalogica 40 周年，创始人 Jane Wurwand</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">BeautyMatter</span>
+        <span class="tag">科学护理</span>
+        <span class="tag">专业教育</span>
+        <span class="tag">品类标杆</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">BeautyMatter 复盘 Dermalogica：用「科学取代潮流」、靠专业教育建成全球皮肤健康标杆</div>
+      <p class="card-desc">
+        BeautyMatter 本周以创始人 Jane Wurwand 为线索，复盘了 Dermalogica 如何成长为全球性的「皮肤健康与教育」领导者，其品牌母题被概括为——「以科学取代潮流，并提高护肤的标准（replacing trends with science and raising the standards of skincare）」。Dermalogica 的成功路径对「专业护理」类品牌极具参考性：它不押注短期潮流，而是把「专业教育」做成品牌的基础设施——先教育从业者与渠道，再让专业信任沿着「专家 → 门店 → 消费者」的链路自然传导。这与本周 Skin Rocks 的「讲得通」、以及 Rituals 把「意义」做成长期承诺的思路彼此呼应，共同勾勒出当下护理品牌的两条护城河：专业的深度，与意义的温度。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        Dermalogica 证明了一条慢但稳的路：把「教育」作为品牌基建，而非一次性营销动作。当专业信任沿着从业者、门店、用户层层传导，它形成的壁垒远比一句广告语更难被复制。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>Dermalogica 的「专业教育驱动」与 KOMO 的「检测驱动」高度同构。建议 KOMO 把「检测师 / 门店专业能力」当作品牌基建来经营：标准化的检测话术、可复制的解读逻辑、对外的科普内容，三者共同构成「KOMO 方法论」。当用户、门店伙伴、甚至同行都默认「头皮这件事，KOMO 最专业」，这种由教育沉淀出的信任，就是 KOMO 最难被价格战和流量战撼动的资产。</p>
+      </div>
+      <div class="source">来源：<a href="https://beautymatter.com/articles/dermalogica-jane-wurwand" target="_blank">BeautyMatter — How Jane Wurwand Built Dermalogica Into a Global Skin Health and Education Leader</a></div>
+    </div>
+  </div>
+
+  <!-- ── 03 本周营销案例 ── -->
+  <div class="section-divider">
+    <span class="sec-num">03</span>
+    <span class="sec-title">本周营销案例</span>
+    <span class="sec-sub">Marketing Cases</span>
+  </div>
+
+  <!-- AI as discovery layer: VivaTech GEO + AS Watson + Balenciaga/Substack -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=beautymatter.com/uploads/2026/06/seo/M1mLHYo1EaGpTtRXG205lNzQRLfwqrXBHpVWXRhN.jpg&w=820&output=jpg"
+      alt="VivaTech 2026 — beauty AI future"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>AI 成为新「发现层」· GEO × Agentic Commerce</span><a href=\'https://beautymatter.com/articles/vivatech-loreal-geo-is-on-the-rise\' target=\'_blank\'>查看 BeautyMatter 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://beautymatter.com/articles/vivatech-loreal-geo-is-on-the-rise" target="_blank">BeautyMatter</a> · VivaTech 2026，L'Oréal 称「GEO 正在崛起」</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">BeautyMatter</span>
+        <span class="tag-src">Cosmetics Business</span>
+        <span class="tag-src">Vogue Business</span>
+        <span class="tag">AI 发现层</span>
+        <span class="tag">GEO</span>
+        <span class="tag">自有受众</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">「被搜到」正在让位于「被 AI 推荐」：GEO、agentic commerce 与自有受众成为新战场</div>
+      <p class="card-desc">
+        本周多家媒体指向同一个结构性变化：AI 正在成为消费者发现品牌的新入口。BeautyMatter 在 VivaTech 2026 现场报道指出，美妆的 AI 未来将「贯穿 ChatGPT、个性化与 agentic commerce（代理式商务）」，并点名 GEO（生成式引擎优化，Generative Engine Optimization）正在崛起——当用户越来越多地通过 AI 助手而非传统搜索来「问该买什么」，品牌如何「被 AI 读到、被 AI 推荐」成为新课题。Cosmetics Business 则援引 AS Watson 集团 CEO 的判断：「AI 转型不是一个 IT 项目，而是一项 CEO 工程（CEO mandate）」。与此呼应，Vogue Business 报道 Balenciaga 开始赞助 Substack 创作者——大牌正绕开平台算法，直接投资「自有 / 共建的受众」。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        发现的入口正在从「搜索框」迁移到「AI 对话」与「可信赖的创作者」。这意味着两件事：①品牌需要让自己的专业内容「结构化、可被 AI 引用」（GEO）；②不能只依赖平台流量，要尽早积累「算法拿不走的自有受众」。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 天然拥有 GEO 的「弹药」——大量结构化的头皮专业知识与检测解读。建议把这些内容系统化地公开沉淀（科普问答、症状—成因—方案的结构化条目），让 KOMO 在「AI 问头皮问题时被引用」中占位。同时，呼应 Balenciaga 的思路：把检测用户沉淀为 KOMO 自有的私域与会员资产（头皮档案、改善记录），这是任何平台算法变动都拿不走的根基。当别人还在买流量，KOMO 应该在攒「被 AI 与用户主动信任」的长期资产。</p>
+      </div>
+      <div class="source">来源：<a href="https://beautymatter.com/articles/vivatech-loreal-geo-is-on-the-rise" target="_blank">BeautyMatter — At VivaTech 2026, Beauty's AI Future Runs Through ChatGPT, Personalization, and Agentic Commerce</a> &nbsp;·&nbsp; <a href="https://cosmeticsbusiness.com/tag/digital" target="_blank">Cosmetics Business — AS Watson CEO: 'AI transformation is not an IT programme, it is a CEO mandate'</a> &nbsp;·&nbsp; <a href="https://www.voguebusiness.com/article/balenciaga-is-sponsoring-substackers" target="_blank">Vogue Business — Balenciaga is sponsoring Substackers</a></div>
+    </div>
+  </div>
+
+  <!-- Cannes Lions 2026 -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=cached.imagescaler.hbpl.co.uk/resize/scaleWidth/952/cached.offlinehbpl.hbpl.co.uk/news/OMC/Ogilvy_Cannes_2026.JPG&w=820&output=jpg"
+      alt="Cannes Lions 2026 — Ogilvy network of the year"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>Cannes Lions 2026 · Ogilvy / LePub / Heineken 封王</span><a href=\'https://www.campaignlive.co.uk/article/ogilvy-lepub-milan-heineken-win-network-agency-brand-year-cannes-lions-2026/1962990\' target=\'_blank\'>查看 Campaign 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.campaignlive.co.uk/article/ogilvy-lepub-milan-heineken-win-network-agency-brand-year-cannes-lions-2026/1962990" target="_blank">Campaign</a> · Ogilvy 获 Cannes Lions 2026「年度网络」</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Campaign</span>
+        <span class="tag">戛纳创意节</span>
+        <span class="tag">行业风向</span>
+        <span class="tag">创意 × AI</span>
+        <span class="tag-date">Jun 2026</span>
+      </div>
+      <div class="card-title">2026 戛纳收官：Ogilvy 封「年度网络」、LePub 米兰封「年度代理商」、喜力封「年度品牌」</div>
+      <p class="card-desc">
+        本周营销圈的焦点是落幕的 Cannes Lions 2026。Campaign 报道，Ogilvy 摘得「年度网络（Network of the Year）」、LePub 米兰获「年度代理商」、Heineken（喜力）成为「年度品牌」。在 AI 几乎渗透所有执行环节的当口，戛纳的获奖逻辑反而再次强调「人味的创意」与「能与人产生情感连接的大想法」；行业层面，WPP 新设集团 CSO（首席战略官）一职，也被解读为「代理商内部战略能力正在变得更重要」——当 AI 把执行成本压低，「策略与创意品味」这类难以自动化的能力，反而被推到更高的价值位置。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        延续上期主线：越是 AI 高歌猛进，行业最高奖台越会奖励「机器替代不了的部分」——洞察、情感、品味、关系。技术拉平执行，人的判断与创意重新变成稀缺品。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>KOMO 不必参与大型行业秀，但其底层判断对 KOMO 成立：把「人」做成招牌。在一个人人都能用 AI 检测的未来，「一个真正懂你头皮、记得你上次状态、会替你着想的检测师」会成为最难复制的体验差异。建议把检测师的「专业 + 共情」能力当作核心品牌资产来培养与传播，让 KOMO 的「人味」成为对抗同质化的护城河。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.campaignlive.co.uk/article/ogilvy-lepub-milan-heineken-win-network-agency-brand-year-cannes-lions-2026/1962990" target="_blank">Campaign — Ogilvy, LePub Milan &amp; Heineken win Network, Agency &amp; Brand of the Year at Cannes Lions 2026</a></div>
+    </div>
+  </div>
+
+  <!-- ── 04 趋势洞察 ── -->
+  <div class="section-divider">
+    <span class="sec-num">04</span>
+    <span class="sec-title">趋势洞察 · 疗愈空间与意义</span>
+    <span class="sec-sub">Healing Space &amp; Meaning</span>
+  </div>
+
+  <!-- Healing space: Paimio Sanatorium (Dezeen) -->
+  <div class="card">
+    <img referrerpolicy="no-referrer"
+      src="https://wsrv.nl/?url=static.dezeen.com/uploads/2026/06/snohetta-aalto-paimio-sanatorium-finland_dezeen_2364_col_hero-852x479.jpg&w=820&output=jpg"
+      alt="Paimio 疗养院改造为面向未来的酒店"
+      class="img-single"
+      onerror="this.outerHTML='<div class=\'img-single img-fallback\'><span>Paimio 疗养院 → 面向未来的疗愈酒店</span><a href=\'https://www.dezeen.com/2026/06/23/aaltos-paimio-sanatorium-set-to-be-turned-into-future-oriented-hotel-by-snohetta/\' target=\'_blank\'>查看 Dezeen 报道 →</a></div>'" />
+    <p class="img-caption" style="padding:5px 20px 0">图片来源：<a href="https://www.dezeen.com/2026/06/23/aaltos-paimio-sanatorium-set-to-be-turned-into-future-oriented-hotel-by-snohetta/" target="_blank">Dezeen</a> · Snøhetta 改造 Aalto 的 Paimio 疗养院（视觉：Proloog/Snøhetta）</p>
+    <div class="card-body">
+      <div class="eyebrow">
+        <span class="tag-src">Dezeen</span>
+        <span class="tag">疗愈空间</span>
+        <span class="tag">适应性再利用</span>
+        <span class="tag">意义溢价</span>
+        <span class="tag-date">Jun 23, 2026</span>
+      </div>
+      <div class="card-title">从结核病疗养院到疗愈酒店：当「意义」被做成一座可被身体感受的空间</div>
+      <p class="card-desc">
+        Dezeen 本周报道，建筑事务所 Snøhetta 公布了改造 Aino 与 Alvar Aalto 1933 年现代主义经典——芬兰 Paimio 疗养院的方案：这座当年为结核病人疗养而建、以「光、空气、与自然亲近」为治愈哲学的建筑，将被改造为一座「面向未来」的酒店，含 spa、可容纳 200 人的礼堂与文化空间，病房变客房，并重新打开当年被玻璃封住的「日光阳台」，新增的 spa 直通森林——延续 Aalto「亲近自然即疗愈」的原始理念。事务所强调，方案「在保护与修复性建筑之间取得平衡，同时为面向未来的思考留出空间」。当产品与功能日益趋同，把「疗愈」做成一座可被身体感受、可被讲述的空间，正成为品牌制造意义与记忆的方式。
+      </p>
+      <div class="insight">
+        <div class="box-label">核心洞察</div>
+        当「功能」被卷平，「意义」靠「可被身体记住的体验」来承载。一座让人放松、与自然相连的空间，比任何广告语都更能让人记住一个品牌想传递的「在乎」——疗愈不只是结果，更是一种被精心设计的体感。
+      </div>
+      <div class="komo">
+        <div class="box-label">KOMO 视角 <span class="ai-note">AI 生成</span></div>
+        <p>这正是 KOMO「线下 + 真人 + 空间」组合的主场。建议把到店检测设计成一段有「起承转合」的疗愈仪式——从落座、净手、检测到解读，用光线、气味、节奏与「亲近自然」的环境语言，让用户在身体层面「感到被照顾」（可借鉴 Paimio「光与宁静」的治愈哲学）；并把门店做成一个值得拍照、值得讲给朋友听的「头皮疗愈站」。当检测从一次功能消费变成一段被身体记住的疗愈体验，复购与口碑会自然发生。</p>
+      </div>
+      <div class="source">来源：<a href="https://www.dezeen.com/2026/06/23/aaltos-paimio-sanatorium-set-to-be-turned-into-future-oriented-hotel-by-snohetta/" target="_blank">Dezeen — Aalto's Paimio Sanatorium set to be turned into "future-oriented" hotel by Snøhetta</a></div>
+    </div>
+  </div>
+
+  <!-- ── 05 本周概念 ── -->
+  <div class="section-divider">
+    <span class="sec-num">05</span>
+    <span class="sec-title">本周概念</span>
+    <span class="sec-sub">Concept of the Week</span>
+  </div>
+
+  <div class="concept">
+    <div class="concept-label">Concept · 本周概念</div>
+    <div class="concept-title">从成分到意义<br><span style="font-size:13px;opacity:0.65;font-weight:300">From Ingredients to Meaning</span></div>
+    <div class="concept-body">
+      上一期我们谈「被感受的真实」（技术负责看清，品牌负责感受）；本周，主线向前推进到一个更尖锐的问题——<strong style="color:#FDF8EE">当「专业 / 功效」成为人人都有的标配，品牌靠什么赢？答案是「意义」。</strong>本期案例在合奏同一首曲子：Skin Rocks 把「讲得通」做成主张、Dermalogica 用「科学 + 教育」建壁垒，把专业做到极致；而 Rituals 用「不打折的公益使命」、Snøhetta 把疗养院改造成疗愈空间，则把意义与感受做成溢价；戛纳奖台奖励「人味的创意」，AI 则成为新的「发现层」，把「专业内容」与「自有受众」的价值进一步推高。一句话：<strong style="color:#FDF8EE">专业是入场券，意义是溢价。</strong>
+    </div>
+    <div class="concept-komo">
+      <strong>KOMO 应用 <span style="font-size:10px;opacity:0.6;font-weight:300">（AI 生成）</span>：</strong>KOMO 正好站在这条主线的交汇点——头皮检测给了它最硬的「专业入场券」，而真正的机会在于把这份专业升级为「意义」：用体系化的科普建立「头皮这件事听 KOMO 的」权威（像 Skin Rocks / Dermalogica），用一段被身体记住的到店仪式承载情感（像 Paimio），用一个不打折的价值承诺赢得长期信任（像 Rituals），并把检测知识结构化、把用户沉淀为自有资产，以迎接 AI 发现层的到来。当同行还在比「谁的检测更准」，KOMO 可以比「谁让用户更确定地知道——我的头皮，被人认真地看懂、并好好照顾了」。这就是从「成分」到「意义」的跃迁，也是这个时代最贵的护城河。
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label">本期来源 Sources</div>
+    <div class="footer-sources">
+      <a href="https://beautymatter.com" target="_blank">BeautyMatter</a>
+      <a href="https://cosmeticsbusiness.com" target="_blank">Cosmetics Business</a>
+      <a href="https://www.dezeen.com" target="_blank">Dezeen</a>
+      <a href="https://www.campaignlive.co.uk" target="_blank">Campaign</a>
+      <a href="https://www.voguebusiness.com" target="_blank">Vogue Business</a>
+    </div>
+    <div class="footer-note">* 本期收集箱无新增待收录素材，内容来自 2026 年 6 月 29 日当周公开行业资讯。配图取自各来源文章的官方分享图（og:image），经图片代理统一引用；若个别图片加载失败会自动回退为带链接的占位卡。Cosmetics Business 与 BeautyMatter 部分文章为会员订阅专属，相关报道基于公开标题、导语与摘要整理；其中 AS Watson「AI 是 CEO 工程」一条以 Digital 版块页链接呈现。品牌星球（Brandstar）图片在本地环境无法稳定加载，本期已按要求不纳入该来源。KOMO 视角、洞察与对比分析均为 AI 辅助生成，仅供内部参考，落地前请人工复核。</div>
+    <div class="footer-copy">KOMO · Scalp &amp; Hair Wellness &nbsp;·&nbsp; Issue 05 &nbsp;·&nbsp; 2026.06.29 &nbsp;·&nbsp; 仅供内部使用</div>
+  </div>
+</footer>
+
+</body>
+</html>
